@@ -13,6 +13,10 @@ variable "db_remote_state_key" {
   type        = string
 }
 
+variable "cluster_name" {
+  description = "The name to use for all the cluster resources"  
+}
+
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
@@ -40,4 +44,19 @@ variable "alb_security_group_name" {
   description = "The name of the security group for the ALB"
   type        = string
   default     = "terraform-example-alb"
+}
+
+variable "instance_type" {
+  description = "The type of EC2 Instance to run (i.e. t2.micro)"
+  type = "string"
+}
+
+variable "min_size" {
+  description = "The minimum number of EC2 instances to run"
+  type = "number"
+}
+
+variable "max_size" {
+  description = "The minimum number of EC2 instances to run"
+  type = "number"
 }
