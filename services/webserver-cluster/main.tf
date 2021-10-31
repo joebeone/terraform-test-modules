@@ -65,7 +65,7 @@ resource "aws_security_group" "instance" {
   name = "${var.cluster_name}-instance" 
 }
 
-resource "aws_security_group_rule" "allow_in_bound_instances" {
+resource "aws_security_group_rule" "allow_in_bound_instance" {
   type = "ingress"
   security_group_id = "aws_security_group.instance.id"
   from_port   = var.server_port
@@ -134,12 +134,6 @@ resource "aws_lb_target_group" "asg" {
 
 resource "aws_security_group" "alb" {
   name = var.alb_security_group_name
-
-
-  # Allow all outbound requests
-  egress {
-
-  }
 }
 
 resource "aws_security_group_rule" "allow_http_inboud_alb" {
