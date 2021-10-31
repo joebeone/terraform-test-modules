@@ -48,15 +48,15 @@ variable "alb_security_group_name" {
 
 variable "instance_type" {
   description = "The type of EC2 Instance to run (i.e. t2.micro)"
-  type = "string"
+  type = string
 }
 
 variable "min_size" {
   description = "The minimum number of EC2 instances to run"
-  type = "number"
+  type = number
 }
 
 variable "max_size" {
   description = "The minimum number of EC2 instances to run"
-  type = "number"
+  type = number
 }
